@@ -1,0 +1,4 @@
+npm init --yes: es para iniciar (un proyecto de npm)  el package.json, lo cual es el archivo principal de configuracion.
+npm i express mongojs ejs: esto es para instalar express y para instalar lo conexion de express a mongo. y no solo permitira la conexion si no tambien hacer las consultas. y el ejs permite renderizar las vistas en el naveador, pero solo sera temporal poruq e sera remplazado por angular e instalar cors.
+* por ahora empezaremos poniendo todo nuestro proyecto en una carpeta llmada src y alli pondremos tanto el codigo del cliente como el codigo del servidor.
+empezaremos poniendo todo el codigo del servidor en un archivo llamado index.js(dentro de ese archivo podemos escrbir lo qye se a dentro de un console.log(), y si lo ejecutamos con un node src/index.js, en la consola nos debe aparecer lo que se escribio en ese console.log)
