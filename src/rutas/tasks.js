@@ -48,5 +48,75 @@ router.get('/tasks', (req, res, next) => {
 
 });
 
+//este metdo nos ayudara a obtener datos por el id
+router.get('/tasks/:id', (req, res, next) => {
+    //en este punto solo vamos a manejar una sola tarea. asiq ue solo usamos task
+     db.tasks.findOne({ _id: mongojs.ObjectId(req.params.id)},(err, task) => {
+         if(err) return next(err);
+         res.json(task);
+         
+     });
+ 
+ });
+ //en este punto usamos post y no get para que nuestro servidor sepa que se va a hacer alguna modificacion a nuesrros datos, en la direccion la cual se le esta pasando.
+
+
+ //este metodo no ayudara a guardar datos.
+ router.post('/tasks', (req, res, next) => {
+ 
+    //req.body es lo que trae la infomcion de el cliente por eso es que se almacena en una variable, la cual es la que se va a almacenar en nestra base dde datos.
+    const task  = req.body;
+    /**
+     * esto es una validacion bastante sencilla, donde se dice que si la tarea que recibimos no tiene ciertas propiedades
+     * que mande un error convertido en json, para decirle qe envio un dato malo.
+     * task.isDone+'' = una variable boleana vuelta string 
+     */
+    if (!task.title || !(task.isDone+'')){
+
+        res.status(400).json({
+            error : 'bad data'
+        });
+    }else{
+        db.tasks.save((err,task) =>{
+            /**
+             * en caso dado aparezca algun error, lo manejamos de la manera en que sabemos, osea mandarlo a express
+             * si no que lo almacene en nuestra db
+             */
+            if(err) return next(err);
+            res.json(task);
+        });
+    }
+ });
+
+//metodo usado para eliminar elemento probablemente por el id
+ router.delete('/task/:id',(req, res, next ) => {
+     db.tasks.remove({_id: mongojs.ObjectId(req.params.id)}, (err, result) => {
+        if(err) return next(err);
+        res.json(result);
+     });
+ });
+
+ router.put('/tasks/:id',(req, res, next ) => {
+    const task = req.body;
+    //este objeto es el que va a contene los nuevos datos para actualizar en la db
+    const updateTask = {};
+    if(task.isDone){
+        updateTask.isDone = task.isDone;
+    }if(task.title){
+        updateTask.title = task.title;
+    }if(!updateTask){
+        req.status(400).json({
+                error : 'bad request'
+        });
+    }else{
+        db.tasks.update({_id : mongojs.ObjectId(req.params.id)}, (err, task) => {
+            if(err) return next(err);
+            res.json(task);
+        });
+    }
+
+    
+
+ });
 
 module.exports = router;
