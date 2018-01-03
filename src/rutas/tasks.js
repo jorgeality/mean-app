@@ -100,6 +100,8 @@ router.get('/tasks/:id', (req, res, next) => {
     const task = req.body;
     //este objeto es el que va a contene los nuevos datos para actualizar en la db
     const updateTask = {};
+    //se hace una pequeña validacion para saber que todo esta bn 
+    
     if(task.isDone){
         updateTask.isDone = task.isDone;
     }if(task.title){
@@ -109,6 +111,7 @@ router.get('/tasks/:id', (req, res, next) => {
                 error : 'bad request'
         });
     }else{
+        //y si todo esta bn, lo mandamos a actualizar
         db.tasks.update({_id : mongojs.ObjectId(req.params.id)}, (err, task) => {
             if(err) return next(err);
             res.json(task);
