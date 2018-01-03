@@ -7,4 +7,6 @@ empezaremos poniendo todo el codigo del servidor en un archivo llamado index.js(
 despues de haber configurado star y dev lo que hacemos es escribir por consola npm start, y se ejecutara lo qye esta en index.js, pero cada vez que queramos ver lo que hay en index.js debemos hacer  lo mismo para evitar eso, ya que se vuelve algo tedioso, ejecutamos el comando npm run dev, y cada vez que hagas un cambiosse va a ver reflejado como si refrescara el servidor.
 nota: (/*start lo que hace es leer lo que hay dentro de index.js*/)
 hasta este punto podemos decir que tenemos nuestro pequeño entorno preparado.
-ejs: es lo que nos va a permitir renderizar por pantalla lo que se vaya haciendo para instalarlo es npm i ejs
+ejs: es lo que nos va a permitir renderizar por pantalla lo que se vaya haciendo para instalarlo es npm i ejs.
+*antes de procesar o enviar informacion vamos a empezar a utilizar nuestro modulo de cors.
+*body-parser : permite recibir en nuestro ervidor formato json ,(express 4.16.2 ya viene incluido usando express.json())
