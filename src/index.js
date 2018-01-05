@@ -66,13 +66,7 @@ app.use(express.urlencoded( { extended : false } ));
 app.use(indexRoute); ///se ha comentado esta linea ya qu eno queremos que esta vista sea la que aparezca al momento de poner  a correr nuesrto servidor, de igual manera se ha comentaso la variable indexRoute.
 app.use('/api', taskRoute);
 
-//static files
-//son todos esos archivos que el navegador toma para mostrar por pantalla.
-<<<<<<< HEAD
-app.use(express.static(path.join(__dirname, 'dist')));
-=======
-///app.use(express.static(path.join(_dirname,'dist')));
->>>>>>> 66673bc6290a1a62425d8f582a3b9985b80eccc6
+
 
 
 //static files
@@ -81,7 +75,6 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 //start server
 
-//start server
 
 
 
