@@ -5,7 +5,7 @@ const app = express();
 
 
 //indexRoute es una variable que nos trae las rutas que se encuenta en nuestro documento index de nuestra carpeta ruta.
-//const indexRoute = require('./rutas/index');
+const indexRoute = require('./rutas/index');
 const taskRoute = require('./rutas/tasks');
 
 
@@ -63,12 +63,16 @@ app.use(express.urlencoded( { extended : false } ));
 
 // de esta manera es como usamos las rutas que se han configurado en nuestro documento index que se encuntra en la carpeta rutas.
 //indexRoute es una variable que se ha declarado alla arriba
-//app.use(indexRoute); se ha comentado esta linea ya qu eno queremos que esta vista sea la que aparezca al momento de poner  a correr nuesrto servidor, de igual manera se ha comentaso la variable indexRoute.
+app.use(indexRoute); ///se ha comentado esta linea ya qu eno queremos que esta vista sea la que aparezca al momento de poner  a correr nuesrto servidor, de igual manera se ha comentaso la variable indexRoute.
 app.use('/api', taskRoute);
 
 //static files
 //son todos esos archivos que el navegador toma para mostrar por pantalla.
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, 'dist')));
+=======
+///app.use(express.static(path.join(_dirname,'dist')));
+>>>>>>> 66673bc6290a1a62425d8f582a3b9985b80eccc6
 
 
 //static files
