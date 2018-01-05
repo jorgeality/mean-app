@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
-
-//importando servicios, de igual manera los debemos incluir en los providers
-import {TasksService} from './services/tasks.service';
+import { HttpClientModule } from '@angular/common/http'; //esto es lo que no va ayudar a pedir datos.
+import { FormsModule  } from '@angular/forms';//esto es lo que permite usar el ngModel
 
 import { AppComponent } from './app.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { TaskService } from './services/task.service';
 
 
 @NgModule({
@@ -16,9 +15,10 @@ import { TasksComponent } from './components/tasks/tasks.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot() // <-- Esta línea también la añadimos
+    HttpClientModule,
+    FormsModule//ngmodel
   ],
-  providers: [TasksService],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

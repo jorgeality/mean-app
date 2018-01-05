@@ -5,7 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+<<<<<<< HEAD
     "build": "ng build",
+=======
+    "build": "ng build --prod",
+>>>>>>> experimento_bootstrap
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -21,15 +25,24 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+<<<<<<< HEAD
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.8",
     "bootstrap": "^4.0.0-beta.3",
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
+=======
+    "bootstrap": "^4.0.0-beta.3",
+    "core-js": "^2.4.1",
+>>>>>>> experimento_bootstrap
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@angular/cli": "1.5.5",
+=======
+    "@angular/cli": "1.6.3",
+>>>>>>> experimento_bootstrap
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
     "@types/jasmine": "~2.5.53",
