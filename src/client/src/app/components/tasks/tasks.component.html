@@ -1,3 +1,30 @@
-<p>
-  tasks works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <!-- el formulario con metodo submit vamos a ejecutar un metodo llamado addTask y tambien va a aceptar el evento-->
+    <form (submit)="addTask($event)">
+      <div class="input-group">
+        <!--propiedad de doble enlace de datos, es lo que permite mostrar los datos, mientras los obtengo o los actualizo, ojo: se necesita tener la propiedad name con el mismo nombre de el doble enlace de datos
+        ya que esas dos propiedades son las que permiten el enlace. el ngMOdel debe ser importado en el app.module-->
+        <input type="text" name ="title" [(ngModel)]="title" placeholder="add task" class="form-control">
+        <span class="input-group-addon">
+          <button type="submit" class="btn btn-primary">
+            Add Task
+          </button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>status</th>
+      <th>title</th>
+      <th>operations</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>

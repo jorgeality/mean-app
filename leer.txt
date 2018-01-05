@@ -17,3 +17,6 @@ ejs: es lo que nos va a permitir renderizar por pantalla lo que se vaya haciendo
 *antes de procesar o enviar informacion vamos a empezar a utilizar nuestro modulo de cors.
 
 *body-parser : permite recibir en nuestro ervidor formato json ,(express 4.16.2 ya viene incluido usando express.json())
+
+
+* al momento de generar un servicio , para no hacer la inyeccion de forma manual al modulo del app, (ng g s nameservice --module=app) plicamos ese comando y listo.
