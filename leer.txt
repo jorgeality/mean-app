@@ -2,11 +2,22 @@ npm init --yes: es para iniciar (un proyecto de npm)  el package.json, lo cual e
 npm i express mongojs ejs: esto es para instalar express y para instalar lo conexion de express a mongo. y no solo permitira la conexion si no tambien hacer las consultas. y el ejs permite renderizar las vistas en el naveador, pero solo sera temporal poruq e sera remplazado por angular e instalar cors.
 * por ahora empezaremos poniendo todo nuestro proyecto en una carpeta llmada src y alli pondremos tanto el codigo del cliente como el codigo del servidor.
 empezaremos poniendo todo el codigo del servidor en un archivo llamado index.js(dentro de ese archivo podemos escrbir lo qye se a dentro de un console.log(), y si lo ejecutamos con un node src/index.js, en la consola nos debe aparecer lo que se escribio en ese console.log).
+
+
 * para evitar la continua repeticion de codigo para poder ejecutar lo  que se ha hecho, se debe descargar otro modulo llamado. npm i nodemon -D, esto lo que nos ayuda es estar reiniciando manualmente el servidor, y con esto estaremos viendo los cambios en tiempo real 
+
+
+
 *dentro del package.json vamos a eliminar ("test": "echo \"Error: no test specified\" && exit 1"), y ahi mismo dentr de los scripts vamos a configurar lo referente a nodemon y npm start
-despues de haber configurado star y dev lo que hacemos es escribir por consola npm start, y se ejecutara lo qye esta en index.js, pero cada vez que queramos ver lo que hay en index.js debemos hacer  lo mismo para evitar eso, ya que se vuelve algo tedioso, ejecutamos el comando npm run dev, y cada vez que hagas un cambiosse va a ver reflejado como si refrescara el servidor.
+despues de haber configurado star y dev lo que hacemos es escribir por consola npm start, y se ejecutara lo qye esta en index.js, pero cada vez que queramos ver lo que hay en index.js debemos hacer  lo mismo para evitar eso, ya que se vuelve algo tedioso, ejecutamos el comando "npm run dev", y cada vez que hagas un cambiosse va a ver reflejado como si refrescara el servidor.
 nota: (/*start lo que hace es leer lo que hay dentro de index.js*/)
 hasta este punto podemos decir que tenemos nuestro pequeño entorno preparado.
 ejs: es lo que nos va a permitir renderizar por pantalla lo que se vaya haciendo para instalarlo es npm i ejs.
 *antes de procesar o enviar informacion vamos a empezar a utilizar nuestro modulo de cors.
 *body-parser : permite recibir en nuestro ervidor formato json ,(express 4.16.2 ya viene incluido usando express.json())
+*ng build :  es lo que nos va a porder obtener como un apk de nustra aplicacion de angular.
+npm start:  es lo que pone a correr nuestro servidor de node.
+
+
+
+para instalar bootstrap, ejecutamos el comando npm i bootstrap@next (el @next es para que nos instale la version mas reciente de bootstrap), y lo configuramos en .angular-cli.jsonen la parte de styles mandamos esta ruta ('../node_modules/bootstrap/dist/css/bootstrap.min.css') y ya conesto tenemos bootstrap para  nuestra aplicacion.
