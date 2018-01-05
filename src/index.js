@@ -66,7 +66,13 @@ app.use('/api', taskRoute);
 
 
 
+//static files
+//son todos esos archivos que el navegador toma para mostrar por pantalla.
+//app.use(express.static(path.join(_dirname,'dist')));
 
+
+
+//start server
 
 
 
